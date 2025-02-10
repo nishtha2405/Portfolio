@@ -3,31 +3,34 @@ name: Deploy Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - main  # Runs the workflow when pushing to the 'main' branch
-
-  workflow_dispatch:  # Allows manual triggering
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+      - main  # Change to your deployment branch if needed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: .  # Upload all files (index.html, CSS, JS)
+          node-version: '18'  # You can adjust the version
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Project (if needed)
+        run: npm run build  # Remove if not using a static site generator
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4  # ✅ Updated to v4
+        with:
+          name: github-pages
+          path: ./dist  # Adjust path if needed
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # Adjust path if needed
