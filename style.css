@@ -1,74 +1,130 @@
-/* Global Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212;
-    color: white;
+    color: #ffffff;
+    text-align: center;
 }
 
 /* Navbar */
-header {
+nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    background: #333;
+    background-color: #1e1e1e;
 }
 
-nav ul {
+.nav-links {
     list-style: none;
     display: flex;
+    gap: 20px;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
+.nav-links a {
     text-decoration: none;
+    color: white;
+    font-size: 18px;
 }
 
 /* Hero Section */
-#hero {
-    text-align: center;
-    padding: 80px 20px;
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
 }
 
 .btn {
-    background: #ff5733;
+    background-color: #ff3c78;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 1.2em;
 }
 
-/* Sections */
-section {
-    padding: 60px 20px;
-    text-align: center;
+/* Skills Section */
+.skills {
+    padding: 50px 20px;
+    background-color: #1e1e1e;
 }
 
-/* Skills */
-.skills-container span {
-    background: #ff5733;
-    padding: 10px;
-    margin: 5px;
-    display: inline-block;
-    border-radius: 5px;
+.skills h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-/* Projects */
+.skill-icons img {
+    width: 50px;
+    margin: 10px;
+}
+
+/* Experience Section */
+.experience {
+    padding: 50px 20px;
+    background-color: #222;
+}
+
+.experience h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 10px;
+}
+
+/* Projects Section */
+.projects {
+    padding: 50px 20px;
+}
+
+.projects h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
 .project {
     background: #222;
     padding: 20px;
-    margin: 20px;
-    border-radius: 5px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 10px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    background-color: #1e1e1e;
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contact a {
+    color: #ff3c78;
+    text-decoration: none;
+    font-weight: bold;
 }
