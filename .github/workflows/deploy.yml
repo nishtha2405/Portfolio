@@ -3,7 +3,12 @@ name: Deploy Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change to your deployment branch if needed
+      - main  # Change this if your deployment branch is different
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
@@ -12,25 +17,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'  # You can adjust the version
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Project (if needed)
-        run: npm run build  # Remove if not using a static site generator
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4  # ✅ Updated to v4
+        uses: actions/upload-pages-artifact@v3  # ✅ Updated version
         with:
-          name: github-pages
-          path: ./dist  # Adjust path if needed
+          path: .  # Uploads everything in the repo
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # Adjust path if needed
+        id: deployment
+        uses: actions/deploy-pages@v4
