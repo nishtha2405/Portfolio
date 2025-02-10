@@ -18,18 +18,22 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Particle System
-const particleCount = 500;
+const particleCount = 700;
 const particles = new THREE.BufferGeometry();
 const positions = new Float32Array(particleCount * 3);
+const colors = new Float32Array(particleCount * 3);
+
 
 for (let i = 0; i < particleCount * 3; i++) {
     positions[i] = (Math.random() - 0.5) * 10;
+    colors[i] = Math.random();
 }
 
 particles.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+particles.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
 const material = new THREE.PointsMaterial({
-    color: 0x3b82f6,
+    vertexColors: true,
     size: 0.1,
     transparent: true,
     opacity: 0.8,
