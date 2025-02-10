@@ -29,7 +29,7 @@ for (let i = 0; i < particleCount * 3; i++) {
 particles.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
 const material = new THREE.PointsMaterial({
-    color: 0xffffff,
+    color: 0x3b82f6,
     size: 0.1,
     transparent: true,
     opacity: 0.8,
