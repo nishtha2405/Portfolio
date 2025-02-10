@@ -1,11 +1,11 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212;
     color: #ffffff;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -15,6 +15,10 @@ nav {
     align-items: center;
     padding: 20px;
     background-color: #1e1e1e;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
 
 .nav-links {
@@ -27,6 +31,11 @@ nav {
     text-decoration: none;
     color: white;
     font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff3c78;
 }
 
 /* Hero Section */
@@ -41,8 +50,9 @@ nav {
 }
 
 .hero h1 {
-    font-size: 3em;
+    font-size: 4em;
     margin-bottom: 10px;
+    animation: fadeIn 1s ease-in;
 }
 
 .hero p {
@@ -57,6 +67,11 @@ nav {
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2em;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff1e60;
 }
 
 /* Skills Section */
@@ -65,33 +80,14 @@ nav {
     background-color: #1e1e1e;
 }
 
-.skills h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
 .skill-icons img {
-    width: 50px;
-    margin: 10px;
+    width: 60px;
+    margin: 15px;
+    transition: transform 0.3s;
 }
 
-/* Experience Section */
-.experience {
-    padding: 50px 20px;
-    background-color: #222;
-}
-
-.experience h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.experience-item {
-    margin-bottom: 20px;
-    text-align: left;
-    padding: 20px;
-    background: #1e1e1e;
-    border-radius: 10px;
+.skill-icons img:hover {
+    transform: scale(1.2);
 }
 
 /* Projects Section */
@@ -99,15 +95,29 @@ nav {
     padding: 50px 20px;
 }
 
-.projects h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
 .project {
     background: #222;
     padding: 20px;
-    margin: 10px auto;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* Certificates Section */
+.certificates {
+    padding: 50px 20px;
+    background-color: #1e1e1e;
+}
+
+.certificate {
+    background: #222;
+    padding: 20px;
+    margin: 20px auto;
     width: 80%;
     border-radius: 10px;
 }
@@ -118,13 +128,19 @@ nav {
     background-color: #1e1e1e;
 }
 
-.contact h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
 .contact a {
     color: #ff3c78;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: #ff1e60;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
