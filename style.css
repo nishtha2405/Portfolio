@@ -1,9 +1,10 @@
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212;
-    color: #ffffff;
+    background-color: #f3f4f6;
+    color: #333;
     text-align: center;
     overflow-x: hidden;
 }
@@ -14,11 +15,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #1e1e1e;
+    background-color: #3b82f6;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links {
@@ -35,7 +37,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #ff3c78;
+    color: #facc15;
 }
 
 /* Hero Section */
@@ -45,8 +47,9 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #ff7eb3, #ff758c);
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
     padding: 20px;
+    color: white;
 }
 
 .hero h1 {
@@ -61,8 +64,8 @@ nav {
 }
 
 .btn {
-    background-color: #ff3c78;
-    color: white;
+    background-color: #facc15;
+    color: #333;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -71,13 +74,13 @@ nav {
 }
 
 .btn:hover {
-    background-color: #ff1e60;
+    background-color: #f59e0b;
 }
 
 /* Skills Section */
 .skills {
     padding: 50px 20px;
-    background-color: #1e1e1e;
+    background-color: #e5e7eb;
 }
 
 .skill-icons img {
@@ -96,47 +99,51 @@ nav {
 }
 
 .project {
-    background: #222;
+    background: #ffffff;
     padding: 20px;
     margin: 20px auto;
     width: 80%;
     border-radius: 10px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .project:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Certificates Section */
 .certificates {
     padding: 50px 20px;
-    background-color: #1e1e1e;
+    background-color: #e5e7eb;
 }
 
 .certificate {
-    background: #222;
+    background: #ffffff;
     padding: 20px;
     margin: 20px auto;
     width: 80%;
     border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Section */
 .contact {
     padding: 50px 20px;
-    background-color: #1e1e1e;
+    background-color: #3b82f6;
+    color: white;
 }
 
 .contact a {
-    color: #ff3c78;
+    color: #facc15;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 .contact a:hover {
-    color: #ff1e60;
+    color: #f59e0b;
 }
 
 /* Animations */
